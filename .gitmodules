@@ -1,0 +1,30 @@
+[submodule "mapnik"]
+	path = mapnik
+	url = git://github.com/paulyc/mapnik.git
+[submodule "openstreetmap-carto"]
+	path = openstreetmap-carto
+	url = git://github.com/gravitystorm/openstreetmap-carto.git
+[submodule "nginx"]
+	path = nginx
+	url = git://github.com/nginx/nginx.git
+[submodule "luajit2"]
+	path = luajit2
+	url = git://github.com/openresty/luajit2.git
+[submodule "ngx_devel_kit"]
+	path = ngx_devel_kit
+	url = git://github.com/simplresty/ngx_devel_kit.git
+[submodule "osm2pgsql"]
+	path = osm2pgsql
+	url = git://github.com/openstreetmap/osm2pgsql.git
+[submodule "PROJ"]
+	path = PROJ
+	url = git://github.com/OSGeo/PROJ.git
+[submodule "lua-nginx-module"]
+	path = lua-nginx-module
+	url = git://github.com/openresty/lua-nginx-module.git
+[submodule "lua-resty-core"]
+	path = lua-resty-core
+	url = git://github.com/openresty/lua-resty-core.git
+[submodule "lua-resty-lrucache"]
+	path = lua-resty-lrucache
+	url = git://github.com/openresty/lua-resty-lrucache.git
