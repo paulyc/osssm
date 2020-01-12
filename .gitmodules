@@ -28,3 +28,6 @@
 [submodule "lua-resty-lrucache"]
 	path = lua-resty-lrucache
 	url = git://github.com/openresty/lua-resty-lrucache.git
+[submodule "libosmium"]
+	path = libosmium
+	url = git://github.com/osmcode/libosmium.git

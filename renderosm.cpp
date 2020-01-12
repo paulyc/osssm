@@ -1,6 +1,11 @@
 /*
-g++ -o renderosm -I/usr/include/mapnik renderosm.cpp -lmapnik -licuuc
+//g++-9 -o renderosm -I/usr/include/mapnik renderosm.cpp -lmapnik -licuuc
+g++-9 -o renderosm renderosm.cpp `mapnik-config --all-flags`
 */
+
+#define MAPNIK_PREFIX "/usr/local"
+#define DEFAULT_OUTPUT "renderosm.png"
+#define DEFAULT_STYLESHEET "osm.xml"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -31,8 +36,8 @@ int main(int argc, char **argv)
     mapnik::Map *map;
     mapnik::image_rgba8 *outimage;
     mapnik::agg_renderer<mapnik::image_rgba8> *renderer; 
-    const char *outfilename= "renderosm.png";
-    const char *stylesheet= "/data/openstreetmap/styles/git-old-mapnik-style/osm.xml";
+    const char *outfilename= DEFAULT_OUTPUT;
+    const char *stylesheet= DEFAULT_STYLESHEET;
     char *parse, *end;
     double aspect;
     unsigned webwidth= 1600, webheight= 1200, outwidth= 0, outheight= 0;
@@ -64,8 +69,10 @@ int main(int argc, char **argv)
         usageexit();
     }
 
-    mapnik::datasource_cache::instance().register_datasources("/usr/lib/mapnik/input/");
-    mapnik::freetype_engine::register_fonts("/usr/lib/mapnik/fonts");
+    mapnik::datasource_cache::instance().register_datasources(MAPNIK_PREFIX"/lib/mapnik/input/");
+    mapnik::freetype_engine::register_fonts(MAPNIK_PREFIX"/lib/mapnik/fonts");
+    //mapnik::datasource_cache::instance().register_datasources("/usr/lib/mapnik/input/");
+    //mapnik::freetype_engine::register_fonts("/usr/lib/mapnik/fonts");
     // Create map object with preliminary parameters:
     map= new mapnik::Map(webwidth, webheight, "+init=epsg:3857");
     mapnik::load_map(*map, stylesheet);
