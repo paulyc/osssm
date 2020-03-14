@@ -1,4 +1,11 @@
 /*
+ * Copyright (C) 2017 Volker Schatz
+ *
+ * From https://web.archive.org/web/20180727132030/https://www.volkerschatz.com/net/osm/scripts/renderosm.cpp
+ * See http://volkerschatz.com/net/osm/offlineosm2.html
+ */
+
+/*
 //g++-9 -o renderosm -I/usr/include/mapnik renderosm.cpp -lmapnik -licuuc
 g++-9 -o renderosm renderosm.cpp `mapnik-config --all-flags`
 */
@@ -72,8 +79,8 @@ int main(int argc, char **argv)
 
     mapnik::datasource_cache::instance().register_datasources(MAPNIK_PREFIX "/lib/mapnik/input/");
     mapnik::freetype_engine::register_fonts(MAPNIK_PREFIX "/lib/mapnik/fonts");
-    mapnik::freetype_engine::register_fonts("/usr/lib/mapnik/fonts");
-    mapnik::freetype_engine::register_fonts("/usr/local/lib/mapnik/fonts");
+    mapnik::freetype_engine::register_fonts("/usr/share/fonts");
+    mapnik::freetype_engine::register_fonts("/usr/local/share/fonts");
     //mapnik::datasource_cache::instance().register_datasources("/usr/lib/mapnik/input/");
     //mapnik::freetype_engine::register_fonts("/usr/lib/mapnik/fonts");
     // Create map object with preliminary parameters:
