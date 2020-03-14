@@ -4,8 +4,9 @@ g++-9 -o renderosm renderosm.cpp `mapnik-config --all-flags`
 */
 
 #define MAPNIK_PREFIX "/usr/local"
-#define DEFAULT_OUTPUT "renderosm.png"
-#define DEFAULT_STYLESHEET "osm.xml"
+#define DEFAULT_OUTPUT "output.png"
+#define DEFAULT_STYLESHEET "style.xml"
+#define POSTGRES_SOCKET "/run/postgresql"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -14,7 +15,7 @@ g++-9 -o renderosm renderosm.cpp `mapnik-config --all-flags`
 #include <iostream>
 
 #include <mapnik/projection.hpp>
-#include <mapnik/geometry/box2d.hpp>
+#include <mapnik/geometry.hpp>
 #include <mapnik/map.hpp>
 #include <mapnik/load_map.hpp>
 #include <mapnik/agg_renderer.hpp> 
@@ -24,8 +25,8 @@ g++-9 -o renderosm renderosm.cpp `mapnik-config --all-flags`
 #include <mapnik/font_engine_freetype.hpp>
 
 
-void usageexit();
-void projforw(const mapnik::projection *p, double x, double y, double *u, double *v);
+static void usageexit();
+static void projforw(const mapnik::projection *p, double x, double y, double *u, double *v);
 mapnik::box2d<double> *osmurl2box(double lati, double longi, unsigned zoom, unsigned pixwidth, unsigned pixheight, mapnik::projection *proj);
 
 
@@ -69,8 +70,10 @@ int main(int argc, char **argv)
         usageexit();
     }
 
-    mapnik::datasource_cache::instance().register_datasources(MAPNIK_PREFIX"/lib/mapnik/input/");
-    mapnik::freetype_engine::register_fonts(MAPNIK_PREFIX"/lib/mapnik/fonts");
+    mapnik::datasource_cache::instance().register_datasources(MAPNIK_PREFIX "/lib/mapnik/input/");
+    mapnik::freetype_engine::register_fonts(MAPNIK_PREFIX "/lib/mapnik/fonts");
+    mapnik::freetype_engine::register_fonts("/usr/lib/mapnik/fonts");
+    mapnik::freetype_engine::register_fonts("/usr/local/lib/mapnik/fonts");
     //mapnik::datasource_cache::instance().register_datasources("/usr/lib/mapnik/input/");
     //mapnik::freetype_engine::register_fonts("/usr/lib/mapnik/fonts");
     // Create map object with preliminary parameters:
@@ -203,10 +206,10 @@ void usageexit()
 "renderosm [options] <lat1,long1,lat2,long2>\n"
 "\n"
 "Options:\n"
-"-o <output.png>     Output file\n"
+"-o <" DEFAULT_OUTPUT ">     Output file\n"
 "-w <width>          Width of output image in pixels (default 3000)\n"
 "-h <height>         Height of output image in pixels\n"
-"-s <style.xml>      XML style file\n"
+"-s <" DEFAULT_STYLESHEET ">      XML style file\n"
 "\n"
 "The zoom level on which the map appearance depends will be computed by the\n"
 "Mapnik library from the output image size.  The zoom level from the\n"

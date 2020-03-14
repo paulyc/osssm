@@ -19,7 +19,7 @@ install: install_proj
 
 cmake_proj:
 	mkdir -p $(BUILD_DIR)
-	cd $(BUILD_DIR) && $(CMAKE) $(CMAKE_FLAGS) ../PROJ/
+	cd $(BUILD_DIR) && $(CMAKE) $(CMAKE_FLAGS) ..
 .PHONY: cmake_proj
 
 make_proj: cmake_proj

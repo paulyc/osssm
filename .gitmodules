@@ -3,7 +3,7 @@
 	url = git://github.com/paulyc/mapnik.git
 [submodule "openstreetmap-carto"]
 	path = openstreetmap-carto
-	url = git://github.com/gravitystorm/openstreetmap-carto.git
+	url = git://github.com/paulyc/mopenstreetmap-carto.git
 [submodule "nginx"]
 	path = nginx
 	url = git://github.com/nginx/nginx.git
@@ -31,3 +31,39 @@
 [submodule "libosmium"]
 	path = libosmium
 	url = git://github.com/osmcode/libosmium.git
+[submodule "gdal"]
+	path = gdal
+	url = git://github.com/OSGeo/gdal.git
+[submodule "grass"]
+	path = grass
+	url = git://github.com/paulyc/grass.git
+[submodule "grass-addons"]
+	path = grass-addons
+	url = git://github.com/OSGeo/grass-addons.git
+[submodule "QGIS"]
+	path = QGIS
+	url = git://github.com/qgis/QGIS.git
+[submodule "QGIS-Code-Examples"]
+	path = QGIS-Code-Examples
+	url = git://github.com/qgis/QGIS-Code-Examples.git
+[submodule "openmaptiles"]
+	path = openmaptiles
+	url = git://github.com/openmaptiles/openmaptiles.git
+[submodule "osmosis"]
+	path = osmosis
+	url = git://github.com/openstreetmap/osmosis.git
+[submodule "mapsforge"]
+	path = mapsforge
+	url = git://github.com/mapsforge/mapsforge.git
+[submodule "tilemill"]
+	path = tilemill
+	url = https://github.com/paulyc/tilemill.git
+[submodule "osm2vectortiles"]
+	path = osm2vectortiles
+	url = git://github.com/osm2vectortiles/osm2vectortiles.git
+[submodule "mod_tile"]
+	path = mod_tile
+	url = git://github.com/paulyc/mod_tile.git
+[submodule "python-mapnik"]
+	path = python-mapnik
+	url = git://github.com/mapnik/python-mapnik.git
