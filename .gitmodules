@@ -67,3 +67,60 @@
 [submodule "python-mapnik"]
 	path = python-mapnik
 	url = git://github.com/mapnik/python-mapnik.git
+[submodule "postgres"]
+	path = postgres
+	url = git@github.com:postgres/postgres.git
+[submodule "postgis"]
+	path = postgis
+	url = https://github.com/postgis/postgis.git
+[submodule "tessera"]
+	path = tessera
+	url = https://github.com/mojodna/tessera.git
+[submodule "tilelive-modules"]
+	path = tilelive-modules
+	url = https://github.com/mojodna/tilelive-modules.git
+[submodule "tilelive-raster"]
+	path = tilelive-raster
+	url = https://github.com/mojodna/tilelive-raster.git
+[submodule "vector-tile-server"]
+	path = vector-tile-server
+	url = https://github.com/artemp/vector-tile-server.git
+[submodule "node-mapnik"]
+	path = node-mapnik
+	url = https://github.com/mapnik/node-mapnik.git
+[submodule "tilelive-vector"]
+	path = tilelive-vector
+	url = https://github.com/mapbox/tilelive-vector.git
+[submodule "node-tilejson"]
+	path = node-tilejson
+	url = https://github.com/mapbox/node-tilejson.git
+[submodule "tilelive-carto"]
+	path = tilelive-carto
+	url = https://github.com/mojodna/tilelive-carto.git
+[submodule "tl"]
+	path = tl
+	url = https://github.com/mojodna/tl.git
+[submodule "tilelive-bridge"]
+	path = tilelive-bridge
+	url = https://github.com/mapbox/tilelive-bridge.git
+[submodule "imposm3"]
+	path = imposm3
+	url = https://github.com/omniscale/imposm3.git
+[submodule "geos"]
+	path = geos
+	url = https://git.osgeo.org/gitea/geos/geos.git
+[submodule "tegola"]
+	path = tegola
+	url = https://github.com/go-spatial/tegola.git
+[submodule "tilelive-mapnik"]
+	path = tilelive-mapnik
+	url = https://github.com/mapbox/tilelive-mapnik.git
+[submodule "kartotherian"]
+	path = kartotherian
+	url = https://github.com/kartotherian/kartotherian.git
+[submodule "openmaptiles-tools"]
+	path = openmaptiles-tools
+	url = https://github.com/openmaptiles/openmaptiles-tools.git
+[submodule "tangram"]
+	path = tangram
+	url = https://github.com/tangrams/tangram.git
